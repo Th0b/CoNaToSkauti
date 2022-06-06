@@ -1,0 +1,20 @@
+[
+    {
+        "otazka": "Jaká je nejčastější přezdívka?",
+        "odpoved1": {"slovo": "Medvěd","cislo": 50},
+        "odpoved2": {"slovo": "Opičák","cislo": 25},
+        "odpoved3": {"slovo": "Banán","cislo": 15},
+        "odpoved4": {"slovo": "Čokoláda","cislo": 3},
+        "odpoved5": {"slovo": "Mýdlo","cislo": 2},
+        "odpoved6": {"slovo": "Jája","cislo": 1}
+    },
+    {
+        "otazka": "Slovo spojené se skautem?",
+        "odpoved1": {"slovo": "Jídlo","cislo": 70},
+        "odpoved2": {"slovo": "Stan","cislo": 15},
+        "odpoved3": {"slovo": "Klobouk","cislo": 15},
+        "odpoved4": {"slovo": "Tábor","cislo": 12},
+        "odpoved5": {"slovo": "Sekera","cislo": 5},
+        "odpoved6": {"slovo": "Kliky","cislo": 1}
+    }
+]

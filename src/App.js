@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {useState, useEffect} from 'react';
 
-function App() {
+export default function App() {
+  const [questions, setQuestions] = useState([null]);
+  const [loading, setLoading] = useState(true);
+  const [test, setTest] = useState(false);
+
+  useEffect(() => {
+    getQuestions();
+  },[]);
+
+  const getQuestions = async () => {
+    try{
+      const response = await fetch("./json/questions.JSON");
+      const result = await response.json();
+      setQuestions(result);
+      setLoading(false)
+    } catch (err) {
+        console.error(err.message);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Otázky</h1>
+      {!loading && questions.map(question => <p onClick={()=>setTest(!test)}>{question.otazka}</p>)}
+      <h2>{test?"Pravda":"Lež"}</h2>
+    </>
   );
 }
-
-export default App;
