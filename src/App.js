@@ -9,7 +9,7 @@ export default function App() {
   useEffect(() => {
     getQuestions();
     //synchronizace mezi okny - poslouchání a inicializace
-    setStatus(JSON.parse(localStorage.getItem("status") || ""));
+    setStatus((JSON.parse(localStorage.getItem("status"))) || "");
     window.addEventListener("storage", onStorageUpdate);
     return () => {
       window.removeEventListener("storage", onStorageUpdate);
@@ -33,7 +33,7 @@ export default function App() {
       newStatus.otazka = e.target.value;
     setStatus(newStatus);
     console.log(status);
-    localStorage.setItem("status", JSON.stringify(e.target.value));
+    localStorage.setItem("status", JSON.stringify(status));
   };
 
   const getQuestions = async () => {
@@ -56,5 +56,5 @@ export default function App() {
       <h5>Body: {status.body}</h5>
       <h5>Otázka: {status.otazka}</h5>
     </>
-  );
+    )
 }
